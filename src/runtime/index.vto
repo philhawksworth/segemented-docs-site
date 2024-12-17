@@ -1,0 +1,16 @@
+---
+url: /runtime/
+title: Deno runtime docs
+---
+
+<p>
+  With content from the runtime dir
+</p>
+
+<ul>
+{{ for item of search.pages("category=runtime") }}
+  <li>
+    <a href="{{ item.url }}">{{ item.title }}</a>
+  </li>
+{{ /for }}
+</ul>

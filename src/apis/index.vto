@@ -1,0 +1,19 @@
+---
+title: API reference
+---
+
+<ul>
+{{ for item of docs.nodes[1].namespaceDef.elements }}
+<li>
+  <h2>{{ item.name }} ({{ item.kind }})</h2>
+  <div>
+    {{ item.jsDoc.doc  }}
+  </div>
+  <ul>
+    {{ for tag of item.jsDoc.tags }}
+    <li>{{ tag.kind }} {{ tag.doc }}</li>
+    {{ /for }}
+  </ul>
+</li>
+{{ /for }}
+</ul>

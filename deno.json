@@ -1,0 +1,58 @@
+{
+  "imports": {
+    "lume/": "https://deno.land/x/lume@v2.4.2/"
+  },
+  "tasks": {
+    "lume": {
+      "description": "Run the lume CLI",
+      "command": "echo \"import 'lume/cli.ts'\" | deno run -A -"
+    },
+    "build": {
+      "description": "Build the entire docs site",
+      "command": "deno task lume",
+      "dependencies": ["clean"]
+    },
+    "build:style": {
+      "description": "Build the site styles and styleguide",
+      "command": "deno task lume --config=_config-style.ts"
+    },
+    "build:runtime": {
+      "description": "Build the runtime docs",
+      "command": "deno task lume --config=_config-runtime.ts",
+      "dependencies": ["build:style"]
+    },
+    "build:apis": {
+      "description": "Build the APIs docs",
+      "command": "deno task lume --config=_config-apis.ts",
+      "dependencies": ["build:style"]
+    },
+    "serve": {
+      "description": "Build, serve, and watch the entire site",
+      "command": "deno task lume -s",
+      "dependencies": ["clean"]
+    },
+    "serve:style": {
+      "description": "Build, serve, and watch just the styles and styleguide",
+      "command": "deno task lume -s --config=_config-style.ts"
+    },
+    "serve:runtime": {
+      "description": "Build, serve, and watch just the runtime section of the docs",
+      "command": "deno task lume -s --config=_config-runtime.ts",
+      "dependencies": ["build:style"]
+    },
+    "serve:apis": {
+      "description": "Build, serve, and watch just the APIs section of the docs",
+      "command": "deno task lume -s --config=_config-apis.ts",
+      "dependencies": ["build:style"]
+    },
+    "clean": {
+      "description": "Delete the output directory",
+      "command": "rm -rf dist"
+    }
+  },
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ]
+  }
+}
