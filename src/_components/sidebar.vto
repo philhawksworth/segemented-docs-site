@@ -1,0 +1,11 @@
+<div class="sidebar">
+  <h2>Sidebar</h2>
+  {{ comp.globalNav() }}
+  <ul>
+    {{ for item of sidebar }}
+      {{ if item.sectionLabel }}
+        {{ comp.sidebarSection({ section: item }) }}
+      {{ /if }}
+    {{ /for }}
+  </ul>
+</div>

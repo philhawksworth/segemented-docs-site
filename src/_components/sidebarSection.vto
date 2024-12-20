@@ -1,0 +1,10 @@
+
+{{ if section.href }}
+  <h3><a href="{{ section.href }}">{{ section.sectionLabel }}</a></h3>
+{{ else }}
+  <h3>{{ section.sectionLabel }}</h3>
+{{ /if }}
+{{ for item of section.items }}
+  <li><a href="{{ item.href }}">{{ item.title }}</a></li>
+{{ /for }}
+      

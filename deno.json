@@ -7,6 +7,10 @@
       "description": "Run the lume CLI",
       "command": "echo \"import 'lume/cli.ts'\" | deno run -A -"
     },
+    "full": {
+      "description": "Gather and stash all expensive data needed in the build",
+      "command": "BUILD_TYPE=FULL deno task build"
+    },
     "build": {
       "description": "Build the entire docs site",
       "command": "deno task lume",
@@ -14,7 +18,7 @@
     },
     "build:style": {
       "description": "Build the site styles and styleguide",
-      "command": "deno task lume --config=_config-style.ts"
+      "command": "lume --config=_config-style.ts"
     },
     "build:runtime": {
       "description": "Build the runtime docs",

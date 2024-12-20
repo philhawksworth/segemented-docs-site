@@ -7,3 +7,33 @@ body {
 .deno-logo {
   width: 150px;
 }
+
+.sidebar {
+  border: 1px solid #e0e0e0;
+  display: inline-block;
+  padding: 1em;
+}
+
+.api-kind-icon {
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  display: inline-block;
+  text-align: center;
+  min-width: 1em;
+}
+.api-kind-function {
+  color: red;
+  background-color: #000000;
+}
+.api-kind-class {
+  color: blue;
+  background-color: #333333;
+}
+.api-kind-interface {
+  color: green;
+  background-color: #555555;
+}
+.api-kind-type {
+  color: yellow;
+  background-color: #999999;
+}
