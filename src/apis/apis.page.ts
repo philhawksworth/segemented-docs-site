@@ -7,7 +7,7 @@ export default function* () {
   for (const item of apis) {
     yield {
       layout: "layouts/api.vto",
-      url: `/apis/${item.kind}/${item.name}-${item.location.byteIndex}`,  
+      url: `/apis/${item.kind}/${item.name}-${item.location.byteIndex}/`,  
       ...item,   
     };
   }

@@ -13,12 +13,12 @@
       "dependencies": ["clean"]
     },
     "build:prod": {
-      "description": "Build the entire docs site with expensive operations",
+      "description": "Build the entire docs site with all the expensive operations",
       "command": "BUILD_TYPE=FULL deno task build"
     },
     "build:style": {
       "description": "Build the site styles and styleguide",
-      "command": "lume --config=_config-style.ts"
+      "command": "deno task lume --config=_config-style.ts"
     },
     "build:runtime": {
       "description": "Build the runtime docs",
@@ -41,7 +41,7 @@
     },
     "serve:runtime": {
       "description": "Build, serve, and watch just the runtime section of the docs",
-      "command": "deno task lume -s --config=_config-runtime.ts",
+      "command": "deno task -s --config=_config-runtime.ts",
       "dependencies": ["build:style"]
     },
     "serve:apis": {
