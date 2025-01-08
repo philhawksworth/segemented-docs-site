@@ -282,7 +282,8 @@ This the data is read from the files in the reference_gen/node_description direc
 This function is called in node.md through the templating engine Vento,
 after which the normal markdown rendered is called.
  */
-export async function generateNodeCompatability() {
+export async function 
+() {
   const descriptions = await generateDescriptions();
   const sorted = Object.entries(descriptions).toSorted(([keyA], [keyB]) =>
     keyA.localeCompare(keyB)
