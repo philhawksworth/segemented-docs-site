@@ -7,14 +7,14 @@
       "description": "Run the lume CLI",
       "command": "echo \"import 'lume/cli.ts'\" | deno run -A -"
     },
-    "full": {
-      "description": "Gather and stash all expensive data needed in the build",
-      "command": "BUILD_TYPE=FULL deno task build"
-    },
     "build": {
       "description": "Build the entire docs site",
       "command": "deno task lume",
       "dependencies": ["clean"]
+    },
+    "build:prod": {
+      "description": "Build the entire docs site with expensive operations",
+      "command": "BUILD_TYPE=FULL deno task build"
     },
     "build:style": {
       "description": "Build the site styles and styleguide",
@@ -48,6 +48,10 @@
       "description": "Build, serve, and watch just the APIs section of the docs",
       "command": "deno task lume -s --config=_config-apis.ts",
       "dependencies": ["build:style"]
+    },
+    "serve:prod": {
+      "description": "Build, serve, and watch just the APIs section of the docs",
+      "command": "BUILD_TYPE=FULL deno task lume -s"
     },
     "clean": {
       "description": "Delete the output directory",
